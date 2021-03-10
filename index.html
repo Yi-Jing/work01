@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>購物清單頁面</title>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
 <body>
-    
+   <div id="app">
+        <h3>新增單筆：</h3>
+        <label for="name">名稱
+            <input id="name" type="text" v-model="name">
+        </label>
+        <label for="price">單價
+            <input id="price" type="text" v-model="price">
+        </label>
+        <label for="num">數量
+            <input id="num" type="text" v-model="num">
+        </label>
+        <h3>購物清單：</h3>
+        <span>總價：{{result}}</span>
+   </div>
+   <script src="./all.js"></script>
 </body>
 </html>
