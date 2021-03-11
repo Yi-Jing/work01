@@ -1,13 +1,24 @@
 var app = new Vue({
     el: "#app",
     data: {
-        name: 0,
-        price: 0,
-        num: 0
+        product: [{
+            name: '',
+            price: 0,
+            num: 0
+        }],
+        display: []
     },
-    computed:{
+    computed: {
         result: function(){
-            return this.name+" "+this.price*this.num+"元";
+            return this.product.name+" "+this.product.price*this.product.num+"元";
+        }
+    },
+    methods: {
+        insert: function(){
+            this.display.push({value: "名稱："+this.product.name+" 單價："+this.product.price+" 數量："+this.product.num});
+        },
+        delete: function(){
+            this.display.splice();
         }
     }
 })

@@ -12,15 +12,21 @@
    <div id="app">
         <h3>新增單筆：</h3>
         <label for="name">名稱
-            <input id="name" type="text" v-model="name">
+            <input id="name" type="text" v-model="product.name">
         </label>
         <label for="price">單價
-            <input id="price" type="text" v-model="price">
+            <input id="price" type="text" v-model="product.price">
         </label>
         <label for="num">數量
-            <input id="num" type="text" v-model="num">
+            <input id="num" type="text" v-model="product.num">
         </label>
+        <input type="button" value="新增" v-on:click="insert()">
         <h3>購物清單：</h3>
+        <p v-for="i in display">
+            {{i.value}}
+            <input type="button" value="刪除">
+        </p>
+        <br>
         <span>總價：{{result}}</span>
    </div>
    <script src="./all.js"></script>
