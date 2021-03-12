@@ -10,15 +10,19 @@ var app = new Vue({
     },
     computed: {
         result: function(){
-            return this.product.name+" "+this.product.price*this.product.num+"元";
+            var sum=0;
+            this.product.forEach(i => {
+                sum+=i.price*i.num;
+            });
+            return sum
         }
     },
     methods: {
-        insert: function(){
-            this.display.push({value: "名稱："+this.product.name+" 單價："+this.product.price+" 數量："+this.product.num});
+        insertList: function(products){
+            this.display.push({name: products.name, price: products.price, num: products.num})
         },
-        delete: function(){
-            this.display.splice();
+        deleteList: function(products){
+            this.display.splice(this.display.indexOf(products), 1);       
         }
     }
 })
